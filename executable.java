@@ -123,13 +123,13 @@ public class executable
                     break;
                 } 
             else
-            { /*ch=2;
-            	switch(ch)
-            	{
-            	case 1:System.out.println(result+"is not recognised as an internal or External Command\n");
-            			break;
-            	case 2: System.out.println("Mark II: Sorry i Did'nt Recognize what you said");
-            	}*/
+            { 
+            	String re2=result.replaceAll("\\s+","+");
+            	try
+                {Process pr=Runtime.getRuntime().exec("cmd /c start chrome www.google.co.in/#q="+re2);}
+                catch(Exception e){System.out.println("Unable to Execute command");}
+                break;
+
             }
               
             }
